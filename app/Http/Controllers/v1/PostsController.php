@@ -8,6 +8,12 @@ use RESTfullServiceTest\Http\Requests\CreatePostRequest;
 use RESTfullServiceTest\Http\Resources\PostResource;
 use RESTfullServiceTest\Models\Post;
 
+/**
+ * @resource Posts
+ *
+ * Class PostsController
+ * @package RESTfullServiceTest\Http\Controllers\v1
+ */
 class PostsController extends ApiController
 {
     /**
@@ -46,6 +52,12 @@ class PostsController extends ApiController
         return $this->respondCreated(new PostResource($post));
     }
 
+    /**
+     * Updates a certain post.
+     *
+     * @param Post $post
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function update(Post $post)
     {
         $this->authorize('update', $post);
