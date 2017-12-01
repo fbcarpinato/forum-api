@@ -3,7 +3,6 @@
 namespace RESTfullServiceTest\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
-use Symfony\Component\HttpFoundation\Response;
 
 class PostsCollection extends ResourceCollection
 {
@@ -16,10 +15,7 @@ class PostsCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'data'  => PostResource::collection($this->collection),
-            'meta' => [
-                'status_code'   => Response::HTTP_OK
-            ]
+            'data'  => PostResource::collection($this->collection)
         ];
     }
 }

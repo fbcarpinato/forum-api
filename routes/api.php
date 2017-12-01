@@ -13,4 +13,6 @@
 
 \Route::group(['prefix' => 'v1', 'namespace' => 'v1'], function() {
     \Route::get('posts', 'PostsController@index');
+    \Route::post('posts', 'PostsController@store')->middleware('auth:api');
+    \Route::get('posts/{post}', 'PostsController@show');
 });
