@@ -3,45 +3,72 @@
 namespace RESTfullServiceTest\Http\Controllers\v1;
 
 use Illuminate\Http\Request;
-use RESTfullServiceTest\Http\Controllers\Controller;
+use RESTfullServiceTest\Http\Controllers\ApiController;
+use RESTfullServiceTest\Http\Requests\CreatePostRequest;
 use RESTfullServiceTest\Http\Resources\PostResource;
-use RESTfullServiceTest\Http\Resources\PostsCollection;
 use RESTfullServiceTest\Models\Post;
 
-class PostsController extends Controller
+class PostsController extends ApiController
 {
     /**
-     * @return PostsCollection
+     * Retrieve all the posts present in the database.
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index() {
         $posts = Post::all();
-        return new PostsCollection($posts);
+        return $this->respondSuccess(PostResource::collection($posts));
     }
 
     /**
+     * Finds a single post.
+     *
      * @param Post $post
-     * @return PostResource
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Post $post)
     {
-        return new PostResource($post);
+        return $this->respondSuccess(new PostResource($post));
     }
 
     /**
-     * @param Request $request
-     * @return PostResource
+     * Creates a new post.
+     *
+     * @param Request|CreatePostRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(CreatePostRequest $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'body'  => 'required'
+        $post = Post::create([
+           'title'      => $request['title'],
+            'body'      => $request['body'],
+            'user_id'   => auth()->user()->id
+        ]);
+        return $this->respondCreated(new PostResource($post));
+    }
+
+    public function update(Post $post)
+    {
+        $this->authorize('update', $post);
+
+        $request = \request()->validate([
+            'title' => 'required_without:body',
+            'body'  => 'required_without:title'
         ]);
 
-        $post = Post::create([
-           'title'  => $request->get('title'),
-            'body'  => $request->get('body')
-        ]);
-        return new PostResource($post);
+        $post->update($request);
+        return $this->respondUpdated();
+    }
+
+    /**
+     * Deletes a certain post.
+     *
+     * @param Post $post
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function destroy(Post $post)
+    {
+        $this->authorize('delete', $post);
+        $post->delete();
+        return $this->respondDeleted();
     }
 }

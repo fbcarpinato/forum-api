@@ -10,6 +10,25 @@
 
 namespace RESTfullServiceTest\Models{
 /**
+ * RESTfullServiceTest\Models\Post
+ *
+ * @property int $id
+ * @property string $title
+ * @property string $body
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \RESTfullServiceTest\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\RESTfullServiceTest\Models\Post whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\RESTfullServiceTest\Models\Post whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\RESTfullServiceTest\Models\Post whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\RESTfullServiceTest\Models\Post whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\RESTfullServiceTest\Models\Post whereUpdatedAt($value)
+ */
+	class Post extends \Eloquent {}
+}
+
+namespace RESTfullServiceTest\Models{
+/**
  * RESTfullServiceTest\Models\User
  *
  * @property int $id

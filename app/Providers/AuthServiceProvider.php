@@ -5,6 +5,8 @@ namespace RESTfullServiceTest\Providers;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
+use RESTfullServiceTest\Models\Post;
+use RESTfullServiceTest\Policies\PostsPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -14,7 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'RESTfullServiceTest\Model' => 'RESTfullServiceTest\Policies\ModelPolicy',
+        Post::class => PostsPolicy::class,
     ];
 
     /**

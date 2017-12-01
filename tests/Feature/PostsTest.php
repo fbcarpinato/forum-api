@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use RESTfullServiceTest\Models\User;
 use RESTfullServiceTest\Models\Post;
-
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -85,38 +84,89 @@ class PostsTest extends TestCase
     }
 
     /** @test */
-    public function a_authenticated_user_should_be_able_to_delete_a_post()
+    public function a_authenticated_user_should_be_able_to_delete_a_post_that_he_owns()
     {
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create(['user_id' => $user->id]);
+        $this->actingAs($user, 'api');
 
+        $this->deleteJson("api/v1/posts/{$post->id}")
+            ->assertStatus(200);
+
+        $this->assertDatabaseMissing('posts', [
+            'id'    => $post->id
+        ]);
     }
 
     /** @test */
     public function a_non_authenticated_user_should_not_be_able_to_delete_posts()
     {
+        $post = factory(Post::class)->create();
 
+        $this->deleteJson("api/v1/posts/{$post->id}")
+            ->assertStatus(401);
     }
 
     /** @test */
-    public function a_authenticated_user_should_be_able_to_delete_only_its_own_posts()
+    public function a_authenticated_user_should_not_be_able_to_delete_other_users_posts()
     {
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+        $this->actingAs($user, 'api');
 
+        $this->deleteJson("api/v1/posts/{$post->id}")
+            ->assertStatus(403);
     }
 
     /** @test */
-    public function a_authenticated_user_should_be_able_to_edit_posts()
+    public function a_authenticated_user_should_be_able_to_edit_a_post_that_he_owns()
     {
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create(['user_id' => $user->id]);
+        $this->actingAs($user, 'api');
 
+        $this->putJson("api/v1/posts/{$post->id}", [
+            'title' => 'My new title',
+            'body'  => 'My new body'
+        ])->assertStatus(200);
+
+        $this->assertDatabaseHas('posts', [
+            'title'     => 'My new title',
+            'body'  => 'My new body'
+        ]);
+    }
+
+    /** @test */
+    public function a_post_needs_at_least_one_new_value_to_update()
+    {
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create(['user_id' => $user->id]);
+        $this->actingAs($user, 'api');
+
+        $this->putJson("api/v1/posts/{$post->id}", [])->assertStatus(422);
     }
 
     /** @test */
     public function a_non_authenticated_user_should_not_be_able_to_edit_posts()
     {
+        $post = factory(Post::class)->create();
 
+        $this->putJson("api/v1/posts/{$post->id}", [
+            'title' => 'My new title',
+            'body'  => 'My new body'
+        ])->assertStatus(401);
     }
 
     /** @test */
     public function a_authenticated_user_should_be_able_to_edit_only_its_own_posts()
     {
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+        $this->actingAs($user, 'api');
 
+        $this->putJson("api/v1/posts/{$post->id}", [
+            'title' => 'My new title',
+            'body'  => 'My new body'
+        ])->assertStatus(403);
     }
 }

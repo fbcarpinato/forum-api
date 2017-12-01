@@ -12,7 +12,18 @@
 */
 
 \Route::group(['prefix' => 'v1', 'namespace' => 'v1'], function() {
-    \Route::get('posts', 'PostsController@index');
-    \Route::post('posts', 'PostsController@store')->middleware('auth:api');
-    \Route::get('posts/{post}', 'PostsController@show');
+
+    \Route::group(['prefix' => 'posts'], function() {
+
+        \Route::group(['middleware' => 'auth:api'], function() {
+            \Route::delete('/{post}', 'PostsController@destroy')->middleware('auth:api');
+            \Route::post('/', 'PostsController@store')->middleware('auth:api');
+            \Route::put('/{post}', 'PostsController@update')->middleware('auth:api');
+        });
+
+        \Route::get('/', 'PostsController@index');
+        \Route::get('/{post}', 'PostsController@show');
+
+    });
+
 });
