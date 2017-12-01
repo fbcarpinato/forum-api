@@ -16,9 +16,9 @@
     \Route::group(['prefix' => 'posts'], function() {
 
         \Route::group(['middleware' => 'auth:api'], function() {
-            \Route::delete('/{post}', 'PostsController@destroy')->middleware('auth:api');
-            \Route::post('/', 'PostsController@store')->middleware('auth:api');
-            \Route::put('/{post}', 'PostsController@update')->middleware('auth:api');
+            \Route::delete('/{post}', 'PostsController@destroy');
+            \Route::post('/', 'PostsController@store');
+            \Route::put('/{post}', 'PostsController@update');
         });
 
         \Route::get('/', 'PostsController@index');
