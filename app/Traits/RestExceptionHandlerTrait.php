@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Validation\ValidationException;
 
 trait RestExceptionHandlerTrait
 {
@@ -25,6 +26,9 @@ trait RestExceptionHandlerTrait
                 break;
             case $this->isUserUnauthenticatedException($e):
                 $retval = $this->unauthenticatedUser();
+                break;
+            case $this->isValidationException($e):
+                $retval = $this->validatationError();
                 break;
             default:
                 $retval = $this->badRequest();
@@ -62,6 +66,11 @@ trait RestExceptionHandlerTrait
         return $this->jsonResponse(['error' => $message], $statusCode);
     }
 
+    protected function validatationError($message="Validation error", $statusCode=422)
+    {
+        return $this->jsonResponse(['error' => $message], $statusCode);
+    }
+
     /**
      * Returns json response.
      *
@@ -85,6 +94,11 @@ trait RestExceptionHandlerTrait
     protected function isModelNotFoundException(Exception $e)
     {
         return $e instanceof ModelNotFoundException;
+    }
+
+    protected function isValidationException(Exception $e)
+    {
+        return $e instanceof ValidationException;
     }
 
     protected function isUserUnauthenticatedException(Exception $e)
