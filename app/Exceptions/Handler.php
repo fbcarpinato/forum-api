@@ -2,11 +2,14 @@
 
 namespace RESTfullServiceTest\Exceptions;
 
+use RESTfullServiceTest\Traits\RestExceptionHandlerTrait;
+use RESTfullServiceTest\Traits\RestTrait;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
+    use RestTrait, RestExceptionHandlerTrait;
     /**
      * A list of the exception types that are not reported.
      *
@@ -44,10 +47,14 @@ class Handler extends ExceptionHandler
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        if(!$this->isApiCall($request)) {
+            return parent::render($request, $exception);
+        }
+
+        return $this->getJsonResponseForException($request, $exception);
     }
 }
