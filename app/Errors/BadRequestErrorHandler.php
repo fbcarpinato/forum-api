@@ -5,17 +5,17 @@ namespace RESTfullServiceTest\Errors;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class AuthenticationErrorHandler extends ErrorHandler
+class BadRequestErrorHandler extends ErrorHandler
 {
 
     /**
      * @var string
      */
-    protected $message = 'Unauthenticated';
+    protected $message = 'Bad Request';
     /**
      * @var int
      */
-    protected $status_code = Response::HTTP_UNAUTHORIZED;
+    protected $status_code = Response::HTTP_BAD_REQUEST;
 
     /**
      * @return \Illuminate\Http\JsonResponse

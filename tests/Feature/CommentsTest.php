@@ -48,7 +48,7 @@ class CommentsTest extends TestCase
     {
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
-        $this->actingAs($user);
+        $this->actingAs($user, 'api');
 
         $this->postJson("api/v1/posts/{$post->id}/comments",[
             'body'  => 'test_comment_body'
@@ -64,7 +64,7 @@ class CommentsTest extends TestCase
     {
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
-        $this->actingAs($user);
+        $this->actingAs($user, 'api');
 
         $this->postJson("api/v1/posts/{$post->id}/comments",[])
             ->assertStatus(422);
@@ -73,42 +73,99 @@ class CommentsTest extends TestCase
     /** @test */
     public function a_non_authenticated_user_cannot_create_comments()
     {
+        $post = factory(Post::class)->create();
 
+        $this->postJson("api/v1/posts/{$post->id}/comments",[
+            'body'  => 'test_comment_body'
+        ])->assertStatus(401);
     }
 
     /** @test */
     public function a_user_can_delete_its_own_comments()
     {
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+        $comment = factory(Comment::class)->create(['post_id' => $post->id, 'user_id' => $user->id]);
+        $this->actingAs($user, 'api');
 
+        $this->deleteJson("api/v1/posts/{$post->id}/comments/{$comment->id}")
+            ->assertStatus(200);
+
+        $this->assertDatabaseMissing('comments', [
+            'id'    =>  $comment->id
+        ]);
     }
 
     /** @test */
     public function a_user_cannot_delete_other_users_comments()
     {
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+        $comment = factory(Comment::class)->create(['post_id' => $post->id]);
+        $this->actingAs($user, 'api');
 
+        $this->deleteJson("api/v1/posts/{$post->id}/comments/{$comment->id}")
+            ->assertStatus(403);
     }
 
     /** @test */
     public function a_non_authenticated_user_cannot_delete_comments()
     {
-
+        $post = factory(Post::class)->create();
+        $comment = factory(Comment::class)->create(['post_id' => $post->id]);
+        $this->deleteJson("api/v1/posts/{$post->id}/comments/{$comment->id}")
+            ->assertStatus(401);
     }
 
     /** @test */
     public function a_user_can_edit_its_own_comments()
     {
+        $post = factory(Post::class)->create();
+        $user = factory(User::class)->create();
+        $this->actingAs($user, 'api');
+        $comment = factory(Comment::class)->create(['post_id' => $post->id, 'user_id' => $user->id]);
 
+        $this->putJson("api/v1/posts/{$post->id}/comments/{$comment->id}", [
+            'body'  => 'new_comment_test_body'
+        ])->assertStatus(200);
+
+        $this->assertDatabaseHas('comments', [
+            'body'  => 'new_comment_test_body'
+        ]);
+    }
+
+    /** @test */
+    public function a_body_field_is_required_to_update_a_comment()
+    {
+        $post = factory(Post::class)->create();
+        $user = factory(User::class)->create();
+        $this->actingAs($user, 'api');
+        $comment = factory(Comment::class)->create(['post_id' => $post->id, 'user_id' => $user->id]);
+
+        $this->putJson("api/v1/posts/{$post->id}/comments/{$comment->id}", [])->assertStatus(422);
     }
 
     /** @test */
     public function a_user_cannot_edit_other_users_comments()
     {
+        $post = factory(Post::class)->create();
+        $user = factory(User::class)->create();
+        $this->actingAs($user, 'api');
+        $comment = factory(Comment::class)->create(['post_id' => $post->id]);
 
+        $this->putJson("api/v1/posts/{$post->id}/comments/{$comment->id}", [
+            'body'  => 'new_comment_test_body'
+        ])->assertStatus(403);
     }
 
     /** @test */
     public function a_non_authenticated_user_cannot_edit_comments()
     {
+        $post = factory(Post::class)->create();
+        $comment = factory(Comment::class)->create(['post_id' => $post->id]);
 
+        $this->putJson("api/v1/posts/{$post->id}/comments/{$comment->id}", [
+            'body'  => 'new_comment_test_body'
+        ])->assertStatus(401);
     }
 }

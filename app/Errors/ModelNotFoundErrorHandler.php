@@ -3,6 +3,8 @@
 namespace RESTfullServiceTest\Errors;
 
 
+use Symfony\Component\HttpFoundation\Response;
+
 class ModelNotFoundErrorHandler extends ErrorHandler
 {
     /**
@@ -12,7 +14,7 @@ class ModelNotFoundErrorHandler extends ErrorHandler
     /**
      * @var int
      */
-    protected $status_code = 404;
+    protected $status_code = Response::HTTP_NOT_FOUND;
 
     /**
      * @return \Illuminate\Http\JsonResponse

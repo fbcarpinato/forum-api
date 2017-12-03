@@ -19,17 +19,6 @@ class ApiController extends Controller
     }
 
     /**
-     * Respond with a 404 error message.
-     *
-     * @param array $data
-     * @return \Illuminate\Http\JsonResponse
-     */
-    protected function respondNotFound($data = [])
-    {
-        return $this->responde($data, 'Resource not found', Response::HTTP_NOT_FOUND);
-    }
-
-    /**
      * Respond with a success message for a deletion.
      *
      * @param array $data

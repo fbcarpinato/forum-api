@@ -10,17 +10,23 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Validation\ValidationException;
 use RESTfullServiceTest\Errors\AuthenticationErrorHandler;
 use RESTfullServiceTest\Errors\AuthorizationErrorHandler;
+use RESTfullServiceTest\Errors\BadRequestErrorHandler;
 use RESTfullServiceTest\Errors\ModelNotFoundErrorHandler;
 use RESTfullServiceTest\Errors\ValidationErrorHandler;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 trait RestExceptionHandlerTrait
 {
 
+    /**
+     * @var array
+     */
     protected $exceptionHandlers = [
-        AuthenticationException::class => AuthenticationErrorHandler::class,
-        ValidationException::class     => ValidationErrorHandler::class,
-        ModelNotFoundException::class  => ModelNotFoundErrorHandler::class,
-        AuthorizationException::class  => AuthorizationErrorHandler::class
+        AuthenticationException::class          => AuthenticationErrorHandler::class,
+        ValidationException::class              => ValidationErrorHandler::class,
+        ModelNotFoundException::class           => ModelNotFoundErrorHandler::class,
+        AuthorizationException::class           => AuthorizationErrorHandler::class,
+        MethodNotAllowedHttpException::class    => ModelNotFoundErrorHandler::class
     ];
 
     /**
@@ -33,25 +39,11 @@ trait RestExceptionHandlerTrait
     protected function getJsonResponseForException(Request $request, Exception $e)
     {
         $handler = $this->exceptionHandlers[get_class($e)];
-
         if ( $handler )
         {
             return (new $handler())->handle();
         }
-
-        return $this->$this->badRequest();
-    }
-
-    /**
-     * Returns json response for generic bad request.
-     *
-     * @param string $message
-     * @param int $statusCode
-     * @return \Illuminate\Http\JsonResponse
-     */
-    protected function badRequest($message='Bad request', $statusCode=400)
-    {
-        return $this->jsonResponse(['error' => $message], $statusCode);
+        return (new BadRequestErrorHandler())->handle();
     }
 
 }

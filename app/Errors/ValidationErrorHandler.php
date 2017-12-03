@@ -3,6 +3,8 @@
 namespace RESTfullServiceTest\Errors;
 
 
+use Symfony\Component\HttpFoundation\Response;
+
 class ValidationErrorHandler extends ErrorHandler
 {
     /**
@@ -12,7 +14,7 @@ class ValidationErrorHandler extends ErrorHandler
     /**
      * @var int
      */
-    protected $status_code = 422;
+    protected $status_code = Response::HTTP_UNPROCESSABLE_ENTITY;
 
     /**
      * @return \Illuminate\Http\JsonResponse

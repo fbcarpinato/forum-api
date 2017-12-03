@@ -17,7 +17,7 @@ use RESTfullServiceTest\Models\Post;
 class PostsController extends ApiController
 {
     /**
-     * Retrieve all the posts present in the database.
+     * Retrieve all posts.
      * @return \Illuminate\Http\JsonResponse
      */
     public function index() {
