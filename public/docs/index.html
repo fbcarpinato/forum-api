@@ -50,7 +50,7 @@
 <!-- END_INFO -->
 <h1>Comments</h1>
 <!-- START_d1547c00082e16f69cd5090f9ebdc8df -->
-<h2>Fetch all the comments for a certain post.</h2>
+<h2>Fetch all the comments.</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -84,7 +84,7 @@ $.ajax(settings).done(function (response) {
 <p><code>HEAD api/v1/posts/{post}/comments</code></p>
 <!-- END_d1547c00082e16f69cd5090f9ebdc8df -->
 <!-- START_f99570930a19ddf175adf1bf36e47c74 -->
-<h2>Create a new comment for a post.</h2>
+<h2>Create a new comment.</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -107,7 +107,7 @@ $.ajax(settings).done(function (response) {
 <p><code>POST api/v1/posts/{post}/comments</code></p>
 <!-- END_f99570930a19ddf175adf1bf36e47c74 -->
 <!-- START_e4b90af0ca7206eae8e663dbed7d7fac -->
-<h2>Fetch a single comment on a certain post.</h2>
+<h2>Fetch a single comment.</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -144,6 +144,52 @@ $.ajax(settings).done(function (response) {
 <p><code>GET api/v1/posts/{post}/comments/{comment}</code></p>
 <p><code>HEAD api/v1/posts/{post}/comments/{comment}</code></p>
 <!-- END_e4b90af0ca7206eae8e663dbed7d7fac -->
+<!-- START_3e4128cd25adabace732657f7dc7f3ed -->
+<h2>Delete a comment.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE "http://localhost/api/v1/posts/{post}/comments/{comment}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/posts/{post}/comments/{comment}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/v1/posts/{post}/comments/{comment}</code></p>
+<!-- END_3e4128cd25adabace732657f7dc7f3ed -->
+<!-- START_9d54c7c0888c12732dd317810c1f7b0c -->
+<h2>Update a comment.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT "http://localhost/api/v1/posts/{post}/comments/{comment}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/posts/{post}/comments/{comment}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/v1/posts/{post}/comments/{comment}</code></p>
+<!-- END_9d54c7c0888c12732dd317810c1f7b0c -->
 <h1>Posts</h1>
 <p>Class PostsController</p>
 <!-- START_b59514618939469a1367e18797eec2b3 -->
@@ -246,7 +292,7 @@ $.ajax(settings).done(function (response) {
 <p><code>PUT api/v1/posts/{post}</code></p>
 <!-- END_87be16b21ad5a10b0cebd40a3cfdddbc -->
 <!-- START_d4ac54c52158ea2dc79730cfac8d8a3f -->
-<h2>Retrieve all the posts present in the database.</h2>
+<h2>Retrieve all posts.</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>

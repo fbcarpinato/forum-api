@@ -14,7 +14,7 @@ use RESTfullServiceTest\Models\Post;
 class CommentsController extends ApiController
 {
     /**
-     * Fetch all the comments for a certain post.
+     * Fetch all the comments.
      *
      * @param Post $post
      * @return \Illuminate\Http\JsonResponse
@@ -26,7 +26,7 @@ class CommentsController extends ApiController
     }
 
     /**
-     * Fetch a single comment on a certain post.
+     * Fetch a single comment.
      *
      * @param Post $post
      * @param Comment $comment
@@ -38,7 +38,7 @@ class CommentsController extends ApiController
     }
 
     /**
-     * Create a new comment for a post.
+     * Create a new comment.
      *
      * @param Post $post
      * @return \Illuminate\Http\JsonResponse
@@ -58,6 +58,12 @@ class CommentsController extends ApiController
         return $this->respondCreated(new CommentResource($comment));
     }
 
+    /**
+     * Update a comment.
+     *
+     * @param Post $post
+     * @param Comment $comment
+     */
     public function update(Post $post, Comment $comment)
     {
         $this->authorize('update', $comment);
@@ -71,6 +77,13 @@ class CommentsController extends ApiController
         ]);
     }
 
+    /**
+     * Delete a comment.
+     *
+     * @param Post $post
+     * @param Comment $comment
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function destroy(Post $post, Comment $comment)
     {
         $this->authorize('delete', $comment);

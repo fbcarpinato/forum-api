@@ -21,7 +21,7 @@ Welcome to the generated API reference.
 
 #Comments
 <!-- START_d1547c00082e16f69cd5090f9ebdc8df -->
-## Fetch all the comments for a certain post.
+## Fetch all the comments.
 
 > Example request:
 
@@ -67,7 +67,7 @@ $.ajax(settings).done(function (response) {
 <!-- END_d1547c00082e16f69cd5090f9ebdc8df -->
 
 <!-- START_f99570930a19ddf175adf1bf36e47c74 -->
-## Create a new comment for a post.
+## Create a new comment.
 
 > Example request:
 
@@ -100,7 +100,7 @@ $.ajax(settings).done(function (response) {
 <!-- END_f99570930a19ddf175adf1bf36e47c74 -->
 
 <!-- START_e4b90af0ca7206eae8e663dbed7d7fac -->
-## Fetch a single comment on a certain post.
+## Fetch a single comment.
 
 > Example request:
 
@@ -148,6 +148,72 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_e4b90af0ca7206eae8e663dbed7d7fac -->
+
+<!-- START_3e4128cd25adabace732657f7dc7f3ed -->
+## Delete a comment.
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/v1/posts/{post}/comments/{comment}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/posts/{post}/comments/{comment}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`DELETE api/v1/posts/{post}/comments/{comment}`
+
+
+<!-- END_3e4128cd25adabace732657f7dc7f3ed -->
+
+<!-- START_9d54c7c0888c12732dd317810c1f7b0c -->
+## Update a comment.
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/api/v1/posts/{post}/comments/{comment}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/posts/{post}/comments/{comment}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`PUT api/v1/posts/{post}/comments/{comment}`
+
+
+<!-- END_9d54c7c0888c12732dd317810c1f7b0c -->
 
 #Posts
 
@@ -265,7 +331,7 @@ $.ajax(settings).done(function (response) {
 <!-- END_87be16b21ad5a10b0cebd40a3cfdddbc -->
 
 <!-- START_d4ac54c52158ea2dc79730cfac8d8a3f -->
-## Retrieve all the posts present in the database.
+## Retrieve all posts.
 
 > Example request:
 

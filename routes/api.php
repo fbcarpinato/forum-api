@@ -23,12 +23,16 @@
 
         \Route::get('/', 'PostsController@index');
         \Route::get('/{post}', 'PostsController@show');
-        \Route::get('/{post}/comments', 'CommentsController@index');
-        \Route::post('/{post}/comments', 'CommentsController@store')->middleware('auth:api');
-        \Route::get('/{post}/comments/{comment}', 'CommentsController@show');
-        \Route::delete('/{post}/comments/{comment}', 'CommentsController@destroy')->middleware('auth:api');
-        \Route::put('/{post}/comments/{comment}', 'CommentsController@update')->middleware('auth:api');
 
+        \Route::group(['prefix' => '/{post}/comments'], function() {
+            \Route::get('/', 'CommentsController@index');
+            \Route::get('/{comment}', 'CommentsController@show');
+
+            \Route::group(['middleware' => 'auth:api'], function() {
+                \Route::post('/', 'CommentsController@store');
+                \Route::delete('/{comment}', 'CommentsController@destroy');
+                \Route::put('/{comment}', 'CommentsController@update');
+            });
+        });
     });
-
 });
