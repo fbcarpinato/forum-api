@@ -83,29 +83,6 @@ $.ajax(settings).done(function (response) {
 <p><code>GET api/v1/posts/{post}/comments</code></p>
 <p><code>HEAD api/v1/posts/{post}/comments</code></p>
 <!-- END_d1547c00082e16f69cd5090f9ebdc8df -->
-<!-- START_f99570930a19ddf175adf1bf36e47c74 -->
-<h2>Create a new comment.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST "http://localhost/api/v1/posts/{post}/comments" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/v1/posts/{post}/comments",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST api/v1/posts/{post}/comments</code></p>
-<!-- END_f99570930a19ddf175adf1bf36e47c74 -->
 <!-- START_e4b90af0ca7206eae8e663dbed7d7fac -->
 <h2>Fetch a single comment.</h2>
 <blockquote>
@@ -144,6 +121,29 @@ $.ajax(settings).done(function (response) {
 <p><code>GET api/v1/posts/{post}/comments/{comment}</code></p>
 <p><code>HEAD api/v1/posts/{post}/comments/{comment}</code></p>
 <!-- END_e4b90af0ca7206eae8e663dbed7d7fac -->
+<!-- START_f99570930a19ddf175adf1bf36e47c74 -->
+<h2>Create a new comment.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost/api/v1/posts/{post}/comments" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/posts/{post}/comments",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/posts/{post}/comments</code></p>
+<!-- END_f99570930a19ddf175adf1bf36e47c74 -->
 <!-- START_3e4128cd25adabace732657f7dc7f3ed -->
 <h2>Delete a comment.</h2>
 <blockquote>
@@ -1114,6 +1114,1580 @@ $.ajax(settings).done(function (response) {
 <p><code>GET api/v1/posts/{post}</code></p>
 <p><code>HEAD api/v1/posts/{post}</code></p>
 <!-- END_dfff1d9b6a3c668b128436efa4e175c6 -->
+<h1>Users</h1>
+<!-- START_080f3ecebb7bcc2f93284b8f5ae1ac3b -->
+<h2>Fetch all the users.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost/api/v1/users" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/users",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "id": 1,
+            "name": "Prof. Rey Hegmann",
+            "email": "dfritsch@example.net"
+        },
+        {
+            "id": 2,
+            "name": "Emmalee Nolan",
+            "email": "anthony.dare@example.com"
+        },
+        {
+            "id": 3,
+            "name": "Ansley Cummerata",
+            "email": "vernice69@example.org"
+        },
+        {
+            "id": 4,
+            "name": "Mrs. Elenor Eichmann",
+            "email": "ktowne@example.net"
+        },
+        {
+            "id": 5,
+            "name": "Nicole Auer",
+            "email": "jovan.walsh@example.com"
+        },
+        {
+            "id": 6,
+            "name": "Maxie Schuster",
+            "email": "streich.alejandrin@example.com"
+        },
+        {
+            "id": 7,
+            "name": "Dr. Osvaldo Wilderman DVM",
+            "email": "mueller.berta@example.net"
+        },
+        {
+            "id": 8,
+            "name": "Sabrina Fay",
+            "email": "zpfeffer@example.com"
+        },
+        {
+            "id": 9,
+            "name": "Prof. Gabriel Reichel",
+            "email": "katrina09@example.org"
+        },
+        {
+            "id": 10,
+            "name": "Dr. Anastacio Ratke III",
+            "email": "chanelle.altenwerth@example.org"
+        },
+        {
+            "id": 11,
+            "name": "Leonor Harris",
+            "email": "larry.conn@example.net"
+        },
+        {
+            "id": 12,
+            "name": "Maymie Becker",
+            "email": "dario66@example.org"
+        },
+        {
+            "id": 13,
+            "name": "Avery Kovacek",
+            "email": "mathilde94@example.net"
+        },
+        {
+            "id": 14,
+            "name": "Danielle Lockman PhD",
+            "email": "stiedemann.phoebe@example.com"
+        },
+        {
+            "id": 15,
+            "name": "Prof. Jeramy Miller Jr.",
+            "email": "kertzmann.harley@example.org"
+        },
+        {
+            "id": 16,
+            "name": "Dr. Lenora Rice II",
+            "email": "tcorwin@example.net"
+        },
+        {
+            "id": 17,
+            "name": "Hazel Boyle",
+            "email": "krajcik.beryl@example.com"
+        },
+        {
+            "id": 18,
+            "name": "Elenor Kautzer III",
+            "email": "eschuster@example.com"
+        },
+        {
+            "id": 19,
+            "name": "Charles Boehm Sr.",
+            "email": "alene73@example.com"
+        },
+        {
+            "id": 20,
+            "name": "Ashly Marquardt Jr.",
+            "email": "heidenreich.augusta@example.com"
+        },
+        {
+            "id": 21,
+            "name": "Nedra Abshire",
+            "email": "emie.upton@example.com"
+        },
+        {
+            "id": 22,
+            "name": "Maci Streich",
+            "email": "vstrosin@example.net"
+        },
+        {
+            "id": 23,
+            "name": "Dusty Beier IV",
+            "email": "wunsch.luz@example.net"
+        },
+        {
+            "id": 24,
+            "name": "Makenzie Bechtelar",
+            "email": "jmcclure@example.org"
+        },
+        {
+            "id": 25,
+            "name": "Mario VonRueden",
+            "email": "zjohnson@example.com"
+        },
+        {
+            "id": 26,
+            "name": "Kendra Boyle",
+            "email": "gerry.luettgen@example.com"
+        },
+        {
+            "id": 27,
+            "name": "Ernesto Zieme V",
+            "email": "cydney.cruickshank@example.net"
+        },
+        {
+            "id": 28,
+            "name": "Dr. Salvatore Lueilwitz I",
+            "email": "ebartoletti@example.org"
+        },
+        {
+            "id": 29,
+            "name": "Miss Kallie McCullough",
+            "email": "ted.tromp@example.com"
+        },
+        {
+            "id": 30,
+            "name": "Prof. Hilario Powlowski DDS",
+            "email": "asha.sipes@example.net"
+        },
+        {
+            "id": 31,
+            "name": "Prof. Duane Aufderhar",
+            "email": "blaise45@example.net"
+        },
+        {
+            "id": 32,
+            "name": "Miss Stacy Roob",
+            "email": "ward.cole@example.org"
+        },
+        {
+            "id": 33,
+            "name": "Destiney O'Keefe",
+            "email": "gideon34@example.com"
+        },
+        {
+            "id": 34,
+            "name": "Alycia Block",
+            "email": "hayley.nicolas@example.org"
+        },
+        {
+            "id": 35,
+            "name": "Kolby Wolf",
+            "email": "erippin@example.net"
+        },
+        {
+            "id": 36,
+            "name": "Desmond Hackett",
+            "email": "skye.bogan@example.net"
+        },
+        {
+            "id": 37,
+            "name": "Otha Mayer IV",
+            "email": "bsatterfield@example.org"
+        },
+        {
+            "id": 38,
+            "name": "Lenny Kemmer",
+            "email": "wade67@example.org"
+        },
+        {
+            "id": 39,
+            "name": "Santos Herman",
+            "email": "antoinette.hyatt@example.org"
+        },
+        {
+            "id": 40,
+            "name": "Kiel O'Kon DVM",
+            "email": "ayden56@example.com"
+        },
+        {
+            "id": 41,
+            "name": "Orlo Friesen",
+            "email": "mbeier@example.net"
+        },
+        {
+            "id": 42,
+            "name": "Jadyn Heathcote PhD",
+            "email": "freeman03@example.net"
+        },
+        {
+            "id": 43,
+            "name": "Kelli Skiles",
+            "email": "herman.kenya@example.net"
+        },
+        {
+            "id": 44,
+            "name": "Sheridan Tremblay",
+            "email": "dibbert.calista@example.com"
+        },
+        {
+            "id": 45,
+            "name": "Mrs. Tamia Cronin",
+            "email": "camila32@example.com"
+        },
+        {
+            "id": 46,
+            "name": "Karianne Haag",
+            "email": "edyth.greenfelder@example.net"
+        },
+        {
+            "id": 47,
+            "name": "Ms. Rosalinda Bode I",
+            "email": "madonna85@example.net"
+        },
+        {
+            "id": 48,
+            "name": "Emory Moen",
+            "email": "eichmann.jenifer@example.net"
+        },
+        {
+            "id": 49,
+            "name": "Dr. Germaine Jast II",
+            "email": "rhianna.reilly@example.com"
+        },
+        {
+            "id": 50,
+            "name": "Alfreda Waelchi",
+            "email": "wiza.ed@example.net"
+        },
+        {
+            "id": 51,
+            "name": "Ella Hoeger MD",
+            "email": "dnicolas@example.com"
+        },
+        {
+            "id": 52,
+            "name": "Prof. Lupe Kulas III",
+            "email": "mkovacek@example.net"
+        },
+        {
+            "id": 53,
+            "name": "Devante Renner",
+            "email": "saige99@example.org"
+        },
+        {
+            "id": 54,
+            "name": "Kiara Corwin",
+            "email": "christop.morar@example.com"
+        },
+        {
+            "id": 55,
+            "name": "Miss Hertha Sipes II",
+            "email": "morissette.brandon@example.net"
+        },
+        {
+            "id": 56,
+            "name": "Anderson Mitchell",
+            "email": "kaley.gutmann@example.org"
+        },
+        {
+            "id": 57,
+            "name": "Jensen Conn",
+            "email": "mohammed42@example.net"
+        },
+        {
+            "id": 58,
+            "name": "Susie Okuneva",
+            "email": "ghaley@example.net"
+        },
+        {
+            "id": 59,
+            "name": "Edyth Marvin",
+            "email": "mariana53@example.org"
+        },
+        {
+            "id": 60,
+            "name": "Lukas Schmeler",
+            "email": "braden82@example.org"
+        },
+        {
+            "id": 61,
+            "name": "Mr. Giovanni Herzog",
+            "email": "nicolas.emilio@example.net"
+        },
+        {
+            "id": 62,
+            "name": "Emmet Anderson",
+            "email": "pheaney@example.com"
+        },
+        {
+            "id": 63,
+            "name": "Miss Margret Purdy",
+            "email": "jonathan66@example.com"
+        },
+        {
+            "id": 64,
+            "name": "Domenica Pagac",
+            "email": "kristoffer32@example.com"
+        },
+        {
+            "id": 65,
+            "name": "Janis Homenick",
+            "email": "pbeier@example.com"
+        },
+        {
+            "id": 66,
+            "name": "Prof. Brannon Dietrich",
+            "email": "javonte19@example.net"
+        },
+        {
+            "id": 67,
+            "name": "Lamar O'Connell",
+            "email": "ebert.selina@example.com"
+        },
+        {
+            "id": 68,
+            "name": "Ross Schneider DVM",
+            "email": "liana.yundt@example.net"
+        },
+        {
+            "id": 69,
+            "name": "Dr. Arturo Mills V",
+            "email": "mortimer.lockman@example.net"
+        },
+        {
+            "id": 70,
+            "name": "Quinton Corkery IV",
+            "email": "wboehm@example.net"
+        },
+        {
+            "id": 71,
+            "name": "Mona Blick",
+            "email": "gerard.brakus@example.com"
+        },
+        {
+            "id": 72,
+            "name": "Agustina Legros",
+            "email": "amina.koss@example.org"
+        },
+        {
+            "id": 73,
+            "name": "Stacy Cormier",
+            "email": "pablo.morar@example.org"
+        },
+        {
+            "id": 74,
+            "name": "Furman Murray V",
+            "email": "grady.brad@example.net"
+        },
+        {
+            "id": 75,
+            "name": "Minerva Wuckert",
+            "email": "pzemlak@example.org"
+        },
+        {
+            "id": 76,
+            "name": "Miss Itzel Leffler V",
+            "email": "pkerluke@example.org"
+        },
+        {
+            "id": 77,
+            "name": "Mrs. Fae Dare V",
+            "email": "cortney49@example.com"
+        },
+        {
+            "id": 78,
+            "name": "Prof. Abby Ondricka",
+            "email": "tressa35@example.org"
+        },
+        {
+            "id": 79,
+            "name": "Justen Emmerich",
+            "email": "grimes.betty@example.net"
+        },
+        {
+            "id": 80,
+            "name": "Johnny Mills",
+            "email": "marjolaine.corwin@example.com"
+        },
+        {
+            "id": 81,
+            "name": "Camren Collier",
+            "email": "friesen.jairo@example.org"
+        },
+        {
+            "id": 82,
+            "name": "Miss Dayana Breitenberg MD",
+            "email": "junior44@example.net"
+        },
+        {
+            "id": 83,
+            "name": "Marlene Doyle",
+            "email": "jayne.jaskolski@example.net"
+        },
+        {
+            "id": 84,
+            "name": "Bernita Nitzsche",
+            "email": "wisozk.brenda@example.org"
+        },
+        {
+            "id": 85,
+            "name": "Heber Tromp",
+            "email": "beier.ines@example.com"
+        },
+        {
+            "id": 86,
+            "name": "Gust Zboncak",
+            "email": "pearlie16@example.org"
+        },
+        {
+            "id": 87,
+            "name": "Britney Huels",
+            "email": "kailyn.mann@example.net"
+        },
+        {
+            "id": 88,
+            "name": "Kristoffer Williamson DVM",
+            "email": "vicente52@example.org"
+        },
+        {
+            "id": 89,
+            "name": "Jacynthe Larson",
+            "email": "eugene.turner@example.com"
+        },
+        {
+            "id": 90,
+            "name": "Prof. Eldridge Schowalter",
+            "email": "gdach@example.org"
+        },
+        {
+            "id": 91,
+            "name": "Prof. Dusty Stiedemann II",
+            "email": "jrussel@example.com"
+        },
+        {
+            "id": 92,
+            "name": "Tessie Beatty",
+            "email": "queen.jakubowski@example.org"
+        },
+        {
+            "id": 93,
+            "name": "Troy Lesch IV",
+            "email": "leffertz@example.com"
+        },
+        {
+            "id": 94,
+            "name": "Waldo Grimes",
+            "email": "rocio33@example.org"
+        },
+        {
+            "id": 95,
+            "name": "Naomie Pacocha",
+            "email": "swaniawski.catherine@example.net"
+        },
+        {
+            "id": 96,
+            "name": "Clinton Gleason",
+            "email": "rasheed.kirlin@example.com"
+        },
+        {
+            "id": 97,
+            "name": "Cesar Heaney",
+            "email": "king.jude@example.net"
+        },
+        {
+            "id": 98,
+            "name": "Ms. Rosamond Macejkovic",
+            "email": "sorn@example.net"
+        },
+        {
+            "id": 99,
+            "name": "Prof. Kenyon Keebler PhD",
+            "email": "ncarter@example.net"
+        },
+        {
+            "id": 100,
+            "name": "Miss Aliya Shields DVM",
+            "email": "tmoen@example.com"
+        },
+        {
+            "id": 101,
+            "name": "Irving Bashirian Jr.",
+            "email": "gdenesik@example.net"
+        },
+        {
+            "id": 102,
+            "name": "Shyanne Friesen",
+            "email": "zachariah01@example.com"
+        },
+        {
+            "id": 103,
+            "name": "Talia Robel",
+            "email": "holly.kunze@example.com"
+        },
+        {
+            "id": 104,
+            "name": "Geoffrey Larson",
+            "email": "jamal10@example.net"
+        },
+        {
+            "id": 105,
+            "name": "Carrie Watsica",
+            "email": "xschroeder@example.net"
+        },
+        {
+            "id": 106,
+            "name": "Fabian Cummerata",
+            "email": "eden.walsh@example.org"
+        },
+        {
+            "id": 107,
+            "name": "Prof. Donny Considine PhD",
+            "email": "jackson17@example.com"
+        },
+        {
+            "id": 108,
+            "name": "Cleora Wilderman",
+            "email": "hammes.carlie@example.org"
+        },
+        {
+            "id": 109,
+            "name": "Keshaun Hilpert",
+            "email": "vrice@example.com"
+        },
+        {
+            "id": 110,
+            "name": "Dr. Allie Rempel",
+            "email": "abbott.clovis@example.net"
+        },
+        {
+            "id": 111,
+            "name": "Dr. Blair Mayert",
+            "email": "lwaters@example.org"
+        },
+        {
+            "id": 112,
+            "name": "Margarete Batz",
+            "email": "keaton.predovic@example.net"
+        },
+        {
+            "id": 113,
+            "name": "Alene Raynor Jr.",
+            "email": "romaguera.rogers@example.com"
+        },
+        {
+            "id": 114,
+            "name": "Ola Yost III",
+            "email": "nat75@example.org"
+        },
+        {
+            "id": 115,
+            "name": "Tamara Collier",
+            "email": "runolfsdottir.marcella@example.com"
+        },
+        {
+            "id": 116,
+            "name": "Jamil Stracke",
+            "email": "wwisoky@example.org"
+        },
+        {
+            "id": 117,
+            "name": "Destini Quitzon I",
+            "email": "hagenes.nickolas@example.org"
+        },
+        {
+            "id": 118,
+            "name": "Mr. Dino Kling Sr.",
+            "email": "oscar.goyette@example.com"
+        },
+        {
+            "id": 119,
+            "name": "Mrs. Kenyatta Stokes",
+            "email": "janessa49@example.org"
+        },
+        {
+            "id": 120,
+            "name": "Margret O'Conner DDS",
+            "email": "zetta11@example.org"
+        },
+        {
+            "id": 121,
+            "name": "Palma Hoppe PhD",
+            "email": "ystoltenberg@example.com"
+        },
+        {
+            "id": 122,
+            "name": "Beulah Mohr",
+            "email": "ellie73@example.com"
+        },
+        {
+            "id": 123,
+            "name": "Mr. Marques Batz",
+            "email": "rae67@example.org"
+        },
+        {
+            "id": 124,
+            "name": "Jeff Wunsch",
+            "email": "jeremy.williamson@example.org"
+        },
+        {
+            "id": 125,
+            "name": "Jayda Konopelski",
+            "email": "lynn.jakubowski@example.net"
+        },
+        {
+            "id": 126,
+            "name": "Uriah Turcotte",
+            "email": "deshaun.littel@example.org"
+        },
+        {
+            "id": 127,
+            "name": "John Koelpin",
+            "email": "lehner.judy@example.com"
+        },
+        {
+            "id": 128,
+            "name": "Thora Stracke",
+            "email": "zbode@example.org"
+        },
+        {
+            "id": 129,
+            "name": "Prof. Sasha Lakin",
+            "email": "wehner.maurine@example.com"
+        },
+        {
+            "id": 130,
+            "name": "Dr. Hobart Grady",
+            "email": "montana86@example.net"
+        },
+        {
+            "id": 131,
+            "name": "Dorris Pagac",
+            "email": "xweissnat@example.com"
+        },
+        {
+            "id": 132,
+            "name": "Otilia Balistreri III",
+            "email": "tsmitham@example.net"
+        },
+        {
+            "id": 133,
+            "name": "Dr. Damien Wolff V",
+            "email": "reilly.anika@example.net"
+        },
+        {
+            "id": 134,
+            "name": "Craig Schinner",
+            "email": "feeney.colleen@example.com"
+        },
+        {
+            "id": 135,
+            "name": "Hailey Vandervort",
+            "email": "glowe@example.org"
+        },
+        {
+            "id": 136,
+            "name": "Francesco Kiehn",
+            "email": "destin.price@example.org"
+        },
+        {
+            "id": 137,
+            "name": "Karley Bednar DDS",
+            "email": "vernice33@example.org"
+        },
+        {
+            "id": 138,
+            "name": "Keon Cole",
+            "email": "adonis.heathcote@example.net"
+        },
+        {
+            "id": 139,
+            "name": "Else Wunsch",
+            "email": "andres.emmerich@example.net"
+        },
+        {
+            "id": 140,
+            "name": "Prof. Marley Lakin DDS",
+            "email": "dframi@example.org"
+        },
+        {
+            "id": 141,
+            "name": "Dr. Ofelia Wiza Sr.",
+            "email": "dejon.reynolds@example.org"
+        },
+        {
+            "id": 142,
+            "name": "Lavonne Robel",
+            "email": "asha24@example.net"
+        },
+        {
+            "id": 143,
+            "name": "Tressa Johnston",
+            "email": "vernon07@example.net"
+        },
+        {
+            "id": 144,
+            "name": "Prof. Kade Nikolaus IV",
+            "email": "petra34@example.net"
+        },
+        {
+            "id": 145,
+            "name": "Halie Bosco DVM",
+            "email": "nienow.maximillia@example.com"
+        },
+        {
+            "id": 146,
+            "name": "Frank Rempel",
+            "email": "kayleigh09@example.com"
+        },
+        {
+            "id": 147,
+            "name": "Miss Florida Hilpert",
+            "email": "sauer.destini@example.com"
+        },
+        {
+            "id": 148,
+            "name": "Thalia Huel",
+            "email": "porter.nikolaus@example.org"
+        },
+        {
+            "id": 149,
+            "name": "Marty Emmerich",
+            "email": "bartholome.harvey@example.org"
+        },
+        {
+            "id": 150,
+            "name": "London Strosin",
+            "email": "shaun30@example.com"
+        },
+        {
+            "id": 151,
+            "name": "Franco Walsh PhD",
+            "email": "loconnell@example.org"
+        },
+        {
+            "id": 152,
+            "name": "Timothy Purdy",
+            "email": "murphy.destini@example.org"
+        },
+        {
+            "id": 153,
+            "name": "Lindsey Hagenes IV",
+            "email": "vmacejkovic@example.com"
+        },
+        {
+            "id": 154,
+            "name": "Dolly Ward",
+            "email": "becker.jedediah@example.net"
+        },
+        {
+            "id": 155,
+            "name": "Prof. Kenneth Schroeder DVM",
+            "email": "qtrantow@example.com"
+        },
+        {
+            "id": 156,
+            "name": "Mr. Khalid Schoen",
+            "email": "evan.okuneva@example.org"
+        },
+        {
+            "id": 157,
+            "name": "Prof. Vivian Jenkins",
+            "email": "maye73@example.com"
+        },
+        {
+            "id": 158,
+            "name": "Dr. Osborne Breitenberg",
+            "email": "xolson@example.net"
+        },
+        {
+            "id": 159,
+            "name": "Dr. Karen Stark Sr.",
+            "email": "beer.amelia@example.com"
+        },
+        {
+            "id": 160,
+            "name": "Prof. Brant Langworth",
+            "email": "neal85@example.net"
+        },
+        {
+            "id": 161,
+            "name": "Alisa Rath",
+            "email": "grant.louvenia@example.com"
+        },
+        {
+            "id": 162,
+            "name": "Jayne Harris",
+            "email": "rbreitenberg@example.net"
+        },
+        {
+            "id": 163,
+            "name": "Reginald Halvorson III",
+            "email": "pschamberger@example.org"
+        },
+        {
+            "id": 164,
+            "name": "Dr. Sarai Barrows",
+            "email": "zachery.rau@example.net"
+        },
+        {
+            "id": 165,
+            "name": "Katherine Mosciski",
+            "email": "arnulfo86@example.org"
+        },
+        {
+            "id": 166,
+            "name": "Miss Jennyfer Kassulke PhD",
+            "email": "hudson.casimer@example.net"
+        },
+        {
+            "id": 167,
+            "name": "Dr. Addie Luettgen",
+            "email": "pollich.zelda@example.org"
+        },
+        {
+            "id": 168,
+            "name": "Randall Kihn",
+            "email": "zrunte@example.org"
+        },
+        {
+            "id": 169,
+            "name": "Edwin Volkman",
+            "email": "jarred.johns@example.net"
+        },
+        {
+            "id": 170,
+            "name": "Prof. Rachel Marquardt",
+            "email": "pbeer@example.net"
+        },
+        {
+            "id": 171,
+            "name": "Ernie Halvorson",
+            "email": "arlo99@example.com"
+        },
+        {
+            "id": 172,
+            "name": "Afton Haag",
+            "email": "rubye37@example.net"
+        },
+        {
+            "id": 173,
+            "name": "Cecil Hilll",
+            "email": "murphy.garry@example.com"
+        },
+        {
+            "id": 174,
+            "name": "Mr. Barry Okuneva MD",
+            "email": "sid.osinski@example.org"
+        },
+        {
+            "id": 175,
+            "name": "Estrella Fritsch II",
+            "email": "swaniawski.mariam@example.com"
+        },
+        {
+            "id": 176,
+            "name": "Onie Rogahn",
+            "email": "odessa.koelpin@example.org"
+        },
+        {
+            "id": 177,
+            "name": "Miss Yvonne Howe I",
+            "email": "utreutel@example.com"
+        },
+        {
+            "id": 178,
+            "name": "Miss Estella Walsh",
+            "email": "madilyn35@example.org"
+        },
+        {
+            "id": 179,
+            "name": "Troy Kovacek",
+            "email": "arthur.runolfsdottir@example.net"
+        },
+        {
+            "id": 180,
+            "name": "Mr. Doug Quigley III",
+            "email": "schaefer.rebecca@example.net"
+        },
+        {
+            "id": 181,
+            "name": "Darien Pfeffer",
+            "email": "fay73@example.com"
+        },
+        {
+            "id": 182,
+            "name": "Rico Swift",
+            "email": "jwaelchi@example.org"
+        },
+        {
+            "id": 183,
+            "name": "Raphael Lockman II",
+            "email": "pmacejkovic@example.net"
+        },
+        {
+            "id": 184,
+            "name": "Mr. Harold Koepp IV",
+            "email": "bvolkman@example.com"
+        },
+        {
+            "id": 185,
+            "name": "Dr. Martine Hilll",
+            "email": "adeline.kassulke@example.com"
+        },
+        {
+            "id": 186,
+            "name": "Linwood Kunze II",
+            "email": "misael86@example.net"
+        },
+        {
+            "id": 187,
+            "name": "Krista Wisozk",
+            "email": "alvina.reichel@example.com"
+        },
+        {
+            "id": 188,
+            "name": "Randall Senger DVM",
+            "email": "makayla13@example.org"
+        },
+        {
+            "id": 189,
+            "name": "Dr. Camryn Purdy Sr.",
+            "email": "buford50@example.net"
+        },
+        {
+            "id": 190,
+            "name": "Vicenta Boyle",
+            "email": "keaton.bartoletti@example.com"
+        },
+        {
+            "id": 191,
+            "name": "Terrence Hills",
+            "email": "udamore@example.com"
+        },
+        {
+            "id": 192,
+            "name": "Mr. Gregorio Fay I",
+            "email": "rosenbaum.nia@example.org"
+        },
+        {
+            "id": 193,
+            "name": "Claudie Renner",
+            "email": "ilynch@example.com"
+        },
+        {
+            "id": 194,
+            "name": "Dr. Justice Durgan",
+            "email": "stamm.maverick@example.org"
+        },
+        {
+            "id": 195,
+            "name": "Noel Herman",
+            "email": "brown.jeffery@example.org"
+        },
+        {
+            "id": 196,
+            "name": "Prof. Fred Kuhn",
+            "email": "pat76@example.net"
+        },
+        {
+            "id": 197,
+            "name": "Arlene Nolan MD",
+            "email": "akautzer@example.net"
+        },
+        {
+            "id": 198,
+            "name": "Catalina Krajcik",
+            "email": "meggie.ferry@example.com"
+        },
+        {
+            "id": 199,
+            "name": "Prof. Edwina Champlin",
+            "email": "alessia.zulauf@example.net"
+        },
+        {
+            "id": 200,
+            "name": "Prof. Axel Barton V",
+            "email": "herta36@example.net"
+        },
+        {
+            "id": 201,
+            "name": "Prof. Keanu Labadie",
+            "email": "myrtis.crona@example.org"
+        },
+        {
+            "id": 202,
+            "name": "Rasheed Ankunding",
+            "email": "jarret20@example.org"
+        },
+        {
+            "id": 203,
+            "name": "Augustine Emmerich",
+            "email": "xboehm@example.com"
+        },
+        {
+            "id": 204,
+            "name": "Dr. Nicolette Waters DVM",
+            "email": "jacobs.elvera@example.net"
+        },
+        {
+            "id": 205,
+            "name": "Greta Fisher",
+            "email": "ibergnaum@example.org"
+        },
+        {
+            "id": 206,
+            "name": "Prof. Bailee Trantow",
+            "email": "omarvin@example.net"
+        },
+        {
+            "id": 207,
+            "name": "Marcellus Blick",
+            "email": "enolan@example.net"
+        },
+        {
+            "id": 208,
+            "name": "Dulce Quitzon I",
+            "email": "zschiller@example.net"
+        },
+        {
+            "id": 209,
+            "name": "Monty Bosco",
+            "email": "williamson.georgianna@example.net"
+        },
+        {
+            "id": 210,
+            "name": "Mrs. Ava Rippin PhD",
+            "email": "zjerde@example.com"
+        },
+        {
+            "id": 211,
+            "name": "Lloyd Wehner PhD",
+            "email": "hector.bogisich@example.com"
+        },
+        {
+            "id": 212,
+            "name": "Maudie Murazik DVM",
+            "email": "elang@example.net"
+        },
+        {
+            "id": 213,
+            "name": "Roslyn Jaskolski",
+            "email": "margaret.ebert@example.org"
+        },
+        {
+            "id": 214,
+            "name": "Prof. Percy Pfannerstill IV",
+            "email": "mkertzmann@example.net"
+        },
+        {
+            "id": 215,
+            "name": "Dr. Sallie Rogahn",
+            "email": "andrew80@example.com"
+        },
+        {
+            "id": 216,
+            "name": "Gus Beahan",
+            "email": "orempel@example.org"
+        },
+        {
+            "id": 217,
+            "name": "Claudia Willms",
+            "email": "eluettgen@example.org"
+        },
+        {
+            "id": 218,
+            "name": "Miss Cordia Kuvalis",
+            "email": "ardella37@example.org"
+        },
+        {
+            "id": 219,
+            "name": "Nya Kshlerin",
+            "email": "von.verlie@example.org"
+        },
+        {
+            "id": 220,
+            "name": "Cicero Stroman",
+            "email": "maybell88@example.com"
+        },
+        {
+            "id": 221,
+            "name": "Dr. Felton Hintz",
+            "email": "amelia.schneider@example.net"
+        },
+        {
+            "id": 222,
+            "name": "Mr. Heber Price",
+            "email": "kirlin.omari@example.org"
+        },
+        {
+            "id": 223,
+            "name": "Prof. Erwin Lowe IV",
+            "email": "powlowski.golden@example.net"
+        },
+        {
+            "id": 224,
+            "name": "Miss Natasha Heaney",
+            "email": "freddie.volkman@example.com"
+        },
+        {
+            "id": 225,
+            "name": "Elmira Feest",
+            "email": "hayley.predovic@example.net"
+        },
+        {
+            "id": 226,
+            "name": "Prof. Elisa Hickle",
+            "email": "cjenkins@example.net"
+        },
+        {
+            "id": 227,
+            "name": "Prof. Kaylee Hauck",
+            "email": "verona.carter@example.net"
+        },
+        {
+            "id": 228,
+            "name": "Wilbert Luettgen",
+            "email": "romaguera.sienna@example.net"
+        },
+        {
+            "id": 229,
+            "name": "Stuart Heller",
+            "email": "trycia70@example.org"
+        },
+        {
+            "id": 230,
+            "name": "Johnson Stoltenberg",
+            "email": "ernestina56@example.net"
+        },
+        {
+            "id": 231,
+            "name": "Danika Hauck",
+            "email": "ucummerata@example.net"
+        },
+        {
+            "id": 232,
+            "name": "Corbin Medhurst",
+            "email": "vchristiansen@example.org"
+        },
+        {
+            "id": 233,
+            "name": "Fabiola Windler",
+            "email": "jakayla.zieme@example.net"
+        },
+        {
+            "id": 234,
+            "name": "Wilma Wyman",
+            "email": "roma90@example.net"
+        },
+        {
+            "id": 235,
+            "name": "Amy Gerhold DDS",
+            "email": "abshire.leonie@example.net"
+        },
+        {
+            "id": 236,
+            "name": "Dax Feeney",
+            "email": "kessler.chloe@example.net"
+        },
+        {
+            "id": 237,
+            "name": "Miss Leanne Parisian",
+            "email": "leuschke.renee@example.net"
+        },
+        {
+            "id": 238,
+            "name": "Watson Rath",
+            "email": "kirlin.marta@example.org"
+        },
+        {
+            "id": 239,
+            "name": "Kiana Cremin Sr.",
+            "email": "ondricka.shawn@example.net"
+        },
+        {
+            "id": 240,
+            "name": "Lorenzo Leffler",
+            "email": "gottlieb.chesley@example.org"
+        },
+        {
+            "id": 241,
+            "name": "Buddy Mayer",
+            "email": "mortimer.casper@example.org"
+        },
+        {
+            "id": 242,
+            "name": "Miss Kellie Gerhold",
+            "email": "andy93@example.com"
+        },
+        {
+            "id": 243,
+            "name": "Quincy Langosh",
+            "email": "pmclaughlin@example.com"
+        },
+        {
+            "id": 244,
+            "name": "Jovan Kiehn",
+            "email": "rudolph.klein@example.net"
+        },
+        {
+            "id": 245,
+            "name": "Mr. Sid Wolff",
+            "email": "vdubuque@example.org"
+        },
+        {
+            "id": 246,
+            "name": "Dorris Upton",
+            "email": "jazmyn72@example.com"
+        },
+        {
+            "id": 247,
+            "name": "Prof. Quinn Gusikowski",
+            "email": "jay73@example.com"
+        },
+        {
+            "id": 248,
+            "name": "Judy Mohr",
+            "email": "sherman56@example.org"
+        },
+        {
+            "id": 249,
+            "name": "Helga Bauch",
+            "email": "kristofer.haag@example.org"
+        },
+        {
+            "id": 250,
+            "name": "Dr. Furman Weber",
+            "email": "roob.enoch@example.org"
+        },
+        {
+            "id": 251,
+            "name": "Xavier Heathcote",
+            "email": "fmueller@example.net"
+        },
+        {
+            "id": 252,
+            "name": "Hilton Shanahan",
+            "email": "xhermann@example.net"
+        },
+        {
+            "id": 253,
+            "name": "Bernardo Streich",
+            "email": "raynor.lorena@example.com"
+        },
+        {
+            "id": 254,
+            "name": "Sim Schultz",
+            "email": "lmosciski@example.com"
+        },
+        {
+            "id": 255,
+            "name": "Maribel Hirthe Jr.",
+            "email": "akub@example.org"
+        },
+        {
+            "id": 256,
+            "name": "Clementine Erdman Jr.",
+            "email": "eveline11@example.com"
+        },
+        {
+            "id": 257,
+            "name": "Amelia Goyette Sr.",
+            "email": "jensen09@example.net"
+        },
+        {
+            "id": 258,
+            "name": "Mrs. Viola Lindgren MD",
+            "email": "obergnaum@example.org"
+        },
+        {
+            "id": 259,
+            "name": "Georgette Beer",
+            "email": "jkilback@example.com"
+        },
+        {
+            "id": 260,
+            "name": "Bertrand Gottlieb",
+            "email": "raphaelle17@example.org"
+        },
+        {
+            "id": 261,
+            "name": "Piper Ernser",
+            "email": "kareem76@example.org"
+        },
+        {
+            "id": 262,
+            "name": "Doug Gislason",
+            "email": "gdoyle@example.net"
+        },
+        {
+            "id": 263,
+            "name": "Delpha Mosciski",
+            "email": "karli53@example.com"
+        },
+        {
+            "id": 264,
+            "name": "Ladarius Hudson",
+            "email": "reichel.odell@example.net"
+        },
+        {
+            "id": 265,
+            "name": "Meda Ankunding",
+            "email": "hermina.wisoky@example.net"
+        },
+        {
+            "id": 266,
+            "name": "Mrs. Margret Adams",
+            "email": "federico97@example.org"
+        },
+        {
+            "id": 267,
+            "name": "Marta Wilkinson",
+            "email": "jonas91@example.com"
+        },
+        {
+            "id": 268,
+            "name": "Henry Bradtke",
+            "email": "predovic.filiberto@example.net"
+        },
+        {
+            "id": 269,
+            "name": "Ms. Allene Terry",
+            "email": "barrows.kimberly@example.com"
+        },
+        {
+            "id": 270,
+            "name": "Larissa Tillman",
+            "email": "xmclaughlin@example.com"
+        },
+        {
+            "id": 271,
+            "name": "Lucio Becker",
+            "email": "ypredovic@example.org"
+        },
+        {
+            "id": 272,
+            "name": "Dr. Kip Wolff",
+            "email": "fidel71@example.org"
+        },
+        {
+            "id": 273,
+            "name": "Missouri DuBuque",
+            "email": "labadie.jeremy@example.org"
+        },
+        {
+            "id": 274,
+            "name": "Ms. Loma Jacobi II",
+            "email": "carter.dallas@example.org"
+        },
+        {
+            "id": 275,
+            "name": "Ms. Shawna Marvin",
+            "email": "reilly.mohamed@example.com"
+        },
+        {
+            "id": 276,
+            "name": "Georgette Corkery",
+            "email": "dan.wiegand@example.net"
+        },
+        {
+            "id": 277,
+            "name": "Eldred Rodriguez",
+            "email": "alysha.williamson@example.org"
+        },
+        {
+            "id": 278,
+            "name": "Vivien Harber",
+            "email": "muller.payton@example.org"
+        },
+        {
+            "id": 279,
+            "name": "Alverta Herman",
+            "email": "paula15@example.net"
+        },
+        {
+            "id": 280,
+            "name": "Dr. Bailee Zulauf DDS",
+            "email": "omer.kuhic@example.com"
+        },
+        {
+            "id": 281,
+            "name": "Margie Lehner",
+            "email": "hermina80@example.com"
+        },
+        {
+            "id": 282,
+            "name": "Prof. Dexter Cormier",
+            "email": "german78@example.com"
+        },
+        {
+            "id": 283,
+            "name": "Dr. Rodrigo Brakus",
+            "email": "marquis65@example.org"
+        },
+        {
+            "id": 284,
+            "name": "Marina Cummings",
+            "email": "chandler.smitham@example.net"
+        },
+        {
+            "id": 285,
+            "name": "Mrs. Patricia Williamson",
+            "email": "vcormier@example.com"
+        },
+        {
+            "id": 286,
+            "name": "Esmeralda Wiza",
+            "email": "ervin74@example.org"
+        },
+        {
+            "id": 287,
+            "name": "Blake Gleichner",
+            "email": "augustus63@example.net"
+        },
+        {
+            "id": 288,
+            "name": "Adelbert Wilkinson",
+            "email": "lueilwitz.elisabeth@example.net"
+        },
+        {
+            "id": 289,
+            "name": "Rafaela Mraz",
+            "email": "dangelo37@example.org"
+        },
+        {
+            "id": 290,
+            "name": "Nelle Kemmer",
+            "email": "mackenzie66@example.com"
+        },
+        {
+            "id": 291,
+            "name": "Mr. Devonte Hansen",
+            "email": "anthony19@example.com"
+        },
+        {
+            "id": 292,
+            "name": "Luna Johnston",
+            "email": "pwilderman@example.net"
+        },
+        {
+            "id": 293,
+            "name": "Elijah Treutel",
+            "email": "ischulist@example.org"
+        },
+        {
+            "id": 294,
+            "name": "Myles Smitham Sr.",
+            "email": "wyman.theresa@example.org"
+        },
+        {
+            "id": 295,
+            "name": "Dr. Jaron Schuster",
+            "email": "kaylah37@example.net"
+        },
+        {
+            "id": 296,
+            "name": "Dr. Laisha Terry",
+            "email": "fkeeling@example.org"
+        },
+        {
+            "id": 297,
+            "name": "Miss Pink Heaney",
+            "email": "kristin76@example.net"
+        },
+        {
+            "id": 298,
+            "name": "Carolyne Hilll",
+            "email": "prosacco.eula@example.net"
+        },
+        {
+            "id": 299,
+            "name": "Dr. Clemmie Willms",
+            "email": "anderson.jasmin@example.org"
+        },
+        {
+            "id": 300,
+            "name": "Curt Mayer",
+            "email": "rudy59@example.com"
+        }
+    ],
+    "meta": {
+        "message": "Success",
+        "status_code": 200
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/users</code></p>
+<p><code>HEAD api/v1/users</code></p>
+<!-- END_080f3ecebb7bcc2f93284b8f5ae1ac3b -->
+<!-- START_b4ea58dd963da91362c51d4088d0d4f4 -->
+<h2>Fetch a single user.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost/api/v1/users/{user}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/users/{user}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "id": 1,
+        "name": "Prof. Rey Hegmann",
+        "email": "dfritsch@example.net"
+    },
+    "meta": {
+        "message": "Success",
+        "status_code": 200
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/users/{user}</code></p>
+<p><code>HEAD api/v1/users/{user}</code></p>
+<!-- END_b4ea58dd963da91362c51d4088d0d4f4 -->
 <h1>general</h1>
 <!-- START_57011a4e29c6bc1cfec9270de49657bf -->
 <h2>Authorize a client to access the user&#039;s account.</h2>
