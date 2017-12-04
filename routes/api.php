@@ -13,6 +13,9 @@
 
 \Route::group(['prefix' => 'v1', 'namespace' => 'v1'], function() {
 
+    \Route::get('/users', 'UsersController@index');
+    \Route::get('/users/{user}', 'UsersController@show');
+
     \Route::group(['prefix' => 'posts'], function() {
 
         \Route::group(['middleware' => 'auth:api'], function() {
