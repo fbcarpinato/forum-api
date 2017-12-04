@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Http\Resources;
+namespace Forum\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 

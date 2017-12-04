@@ -1,7 +1,7 @@
 <?php
 
+use Forum\Models\Post;
 use Illuminate\Database\Seeder;
-use RESTfullServiceTest\Models\Post;
 
 class PostsTableSeeder extends Seeder
 {

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'RESTfullServiceTest'),
+    'name' => env('APP_NAME', 'Forum'),
 
     /*
     |--------------------------------------------------------------------------
@@ -172,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        RESTfullServiceTest\Providers\AppServiceProvider::class,
-        RESTfullServiceTest\Providers\AuthServiceProvider::class,
-        // RESTfullServiceTest\Providers\BroadcastServiceProvider::class,
-        RESTfullServiceTest\Providers\EventServiceProvider::class,
-        RESTfullServiceTest\Providers\RouteServiceProvider::class,
+        Forum\Providers\AppServiceProvider::class,
+        Forum\Providers\AuthServiceProvider::class,
+        // Forum\Providers\BroadcastServiceProvider::class,
+        Forum\Providers\EventServiceProvider::class,
+        Forum\Providers\RouteServiceProvider::class,
 
     ],
 

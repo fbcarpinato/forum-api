@@ -1,9 +1,9 @@
 <?php
 
-namespace RESTfullServiceTest\Policies;
+namespace Forum\Policies;
 
-use RESTfullServiceTest\Models\Comment;
-use RESTfullServiceTest\Models\User;
+use Forum\Models\Comment;
+use Forum\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CommentsPolicy

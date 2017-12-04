@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.22 on 2017-12-02.
+ * Generated for Laravel 5.5.22 on 2017-12-03.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -1360,7 +1360,7 @@ namespace Illuminate\Support\Facades {
         public static function handle($input, $output = null)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RESTfullServiceTest\Console\Kernel::handle($input, $output);
+            return \Forum\Console\Kernel::handle($input, $output);
         }
         
         /**
@@ -1374,7 +1374,7 @@ namespace Illuminate\Support\Facades {
         public static function terminate($input, $status)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \RESTfullServiceTest\Console\Kernel::terminate($input, $status);
+            \Forum\Console\Kernel::terminate($input, $status);
         }
         
         /**
@@ -1388,7 +1388,7 @@ namespace Illuminate\Support\Facades {
         public static function command($signature, $callback)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RESTfullServiceTest\Console\Kernel::command($signature, $callback);
+            return \Forum\Console\Kernel::command($signature, $callback);
         }
         
         /**
@@ -1401,7 +1401,7 @@ namespace Illuminate\Support\Facades {
         public static function registerCommand($command)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \RESTfullServiceTest\Console\Kernel::registerCommand($command);
+            \Forum\Console\Kernel::registerCommand($command);
         }
         
         /**
@@ -1416,7 +1416,7 @@ namespace Illuminate\Support\Facades {
         public static function call($command, $parameters = array(), $outputBuffer = null)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RESTfullServiceTest\Console\Kernel::call($command, $parameters, $outputBuffer);
+            return \Forum\Console\Kernel::call($command, $parameters, $outputBuffer);
         }
         
         /**
@@ -1430,7 +1430,7 @@ namespace Illuminate\Support\Facades {
         public static function queue($command, $parameters = array())
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RESTfullServiceTest\Console\Kernel::queue($command, $parameters);
+            return \Forum\Console\Kernel::queue($command, $parameters);
         }
         
         /**
@@ -1442,7 +1442,7 @@ namespace Illuminate\Support\Facades {
         public static function all()
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RESTfullServiceTest\Console\Kernel::all();
+            return \Forum\Console\Kernel::all();
         }
         
         /**
@@ -1454,7 +1454,7 @@ namespace Illuminate\Support\Facades {
         public static function output()
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            return \RESTfullServiceTest\Console\Kernel::output();
+            return \Forum\Console\Kernel::output();
         }
         
         /**
@@ -1466,7 +1466,7 @@ namespace Illuminate\Support\Facades {
         public static function bootstrap()
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \RESTfullServiceTest\Console\Kernel::bootstrap();
+            \Forum\Console\Kernel::bootstrap();
         }
         
         /**
@@ -1479,7 +1479,7 @@ namespace Illuminate\Support\Facades {
         public static function setArtisan($artisan)
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
-            \RESTfullServiceTest\Console\Kernel::setArtisan($artisan);
+            \Forum\Console\Kernel::setArtisan($artisan);
         }
          
     }

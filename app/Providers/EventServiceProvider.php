@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Providers;
+namespace Forum\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'RESTfullServiceTest\Events\Event' => [
-            'RESTfullServiceTest\Listeners\EventListener',
+        'Forum\Events\Event' => [
+            'Forum\Listeners\EventListener',
         ],
     ];
 

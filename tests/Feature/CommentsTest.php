@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use RESTfullServiceTest\Models\Post;
-use RESTfullServiceTest\Models\Comment;
-use RESTfullServiceTest\Models\User;
+use Forum\Models\Post;
+use Forum\Models\Comment;
+use Forum\Models\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 

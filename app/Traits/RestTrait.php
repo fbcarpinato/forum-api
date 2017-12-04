@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Traits;
+namespace Forum\Traits;
 
 use Illuminate\Http\Request;
 

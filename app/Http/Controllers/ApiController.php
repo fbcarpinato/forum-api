@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Http\Controllers;
+namespace Forum\Http\Controllers;
 
 
 use Symfony\Component\HttpFoundation\Response;

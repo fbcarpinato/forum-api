@@ -1,15 +1,15 @@
 <?php
 
-namespace RESTfullServiceTest\Http\Controllers\v1;
+namespace Forum\Http\Controllers\v1;
 
-use RESTfullServiceTest\Http\Controllers\ApiController;
-use RESTfullServiceTest\Http\Resources\CommentResource;
-use RESTfullServiceTest\Models\Comment;
-use RESTfullServiceTest\Models\Post;
+use Forum\Http\Controllers\ApiController;
+use Forum\Http\Resources\CommentResource;
+use Forum\Models\Comment;
+use Forum\Models\Post;
 
 /**
  * @resource Comments
- * @package RESTfullServiceTest\Http\Controllers\v1
+ * @package Forum\Http\Controllers\v1
  */
 class CommentsController extends ApiController
 {

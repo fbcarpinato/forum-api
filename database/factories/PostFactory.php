@@ -1,8 +1,8 @@
 <?php
 
 use Faker\Generator as Faker;
-use RESTfullServiceTest\Models\Post;
-use RESTfullServiceTest\Models\User;
+use Forum\Models\Post;
+use Forum\Models\User;
 
 $factory->define(Post::class, function (Faker $faker) {
     return [

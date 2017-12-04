@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Errors;
+namespace Forum\Errors;
 
 
 use Symfony\Component\HttpFoundation\Response;

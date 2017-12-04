@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Models;
+namespace Forum\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

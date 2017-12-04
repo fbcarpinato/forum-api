@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Http\Requests;
+namespace Forum\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

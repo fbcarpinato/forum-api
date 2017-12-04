@@ -1,9 +1,9 @@
 <?php
 
 use Faker\Generator as Faker;
-use RESTfullServiceTest\Models\Post;
-use RESTfullServiceTest\Models\User;
-use RESTfullServiceTest\Models\Comment;
+use Forum\Models\Post;
+use Forum\Models\User;
+use Forum\Models\Comment;
 
 $factory->define(Comment::class, function (Faker $faker) {
     return [

@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Traits;
+namespace Forum\Traits;
 
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -8,11 +8,11 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Validation\ValidationException;
-use RESTfullServiceTest\Errors\AuthenticationErrorHandler;
-use RESTfullServiceTest\Errors\AuthorizationErrorHandler;
-use RESTfullServiceTest\Errors\BadRequestErrorHandler;
-use RESTfullServiceTest\Errors\ModelNotFoundErrorHandler;
-use RESTfullServiceTest\Errors\ValidationErrorHandler;
+use Forum\Errors\AuthenticationErrorHandler;
+use Forum\Errors\AuthorizationErrorHandler;
+use Forum\Errors\BadRequestErrorHandler;
+use Forum\Errors\ModelNotFoundErrorHandler;
+use Forum\Errors\ValidationErrorHandler;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 trait RestExceptionHandlerTrait

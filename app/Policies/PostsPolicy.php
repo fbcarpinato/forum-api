@@ -1,9 +1,9 @@
 <?php
 
-namespace RESTfullServiceTest\Policies;
+namespace Forum\Policies;
 
-use RESTfullServiceTest\Models\Post;
-use RESTfullServiceTest\Models\User;
+use Forum\Models\Post;
+use Forum\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PostsPolicy

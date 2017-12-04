@@ -1,6 +1,6 @@
 <?php
 
-use RESTfullServiceTest\Models\User;
+use Forum\Models\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder

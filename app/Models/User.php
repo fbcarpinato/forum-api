@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Models;
+namespace Forum\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

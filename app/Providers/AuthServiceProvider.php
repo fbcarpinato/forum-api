@@ -1,14 +1,14 @@
 <?php
 
-namespace RESTfullServiceTest\Providers;
+namespace Forum\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
-use RESTfullServiceTest\Models\Comment;
-use RESTfullServiceTest\Models\Post;
-use RESTfullServiceTest\Policies\CommentsPolicy;
-use RESTfullServiceTest\Policies\PostsPolicy;
+use Forum\Models\Comment;
+use Forum\Models\Post;
+use Forum\Policies\CommentsPolicy;
+use Forum\Policies\PostsPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {

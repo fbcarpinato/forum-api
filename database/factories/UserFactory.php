@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(RESTfullServiceTest\Models\User::class, function (Faker $faker) {
+$factory->define(Forum\Models\User::class, function (Faker $faker) {
     static $password;
 
     return [

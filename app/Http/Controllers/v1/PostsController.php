@@ -1,18 +1,18 @@
 <?php
 
-namespace RESTfullServiceTest\Http\Controllers\v1;
+namespace Forum\Http\Controllers\v1;
 
 use Illuminate\Http\Request;
-use RESTfullServiceTest\Http\Controllers\ApiController;
-use RESTfullServiceTest\Http\Requests\CreatePostRequest;
-use RESTfullServiceTest\Http\Resources\PostResource;
-use RESTfullServiceTest\Models\Post;
+use Forum\Http\Controllers\ApiController;
+use Forum\Http\Requests\CreatePostRequest;
+use Forum\Http\Resources\PostResource;
+use Forum\Models\Post;
 
 /**
  * @resource Posts
  *
  * Class PostsController
- * @package RESTfullServiceTest\Http\Controllers\v1
+ * @package Forum\Http\Controllers\v1
  */
 class PostsController extends ApiController
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace RESTfullServiceTest\Exceptions;
+namespace Forum\Exceptions;
 
-use RESTfullServiceTest\Traits\RestExceptionHandlerTrait;
-use RESTfullServiceTest\Traits\RestTrait;
+use Forum\Traits\RestExceptionHandlerTrait;
+use Forum\Traits\RestTrait;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Errors;
+namespace Forum\Errors;
 
 
 abstract class ErrorHandler

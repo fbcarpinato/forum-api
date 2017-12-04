@@ -1,6 +1,6 @@
 <?php
 
-namespace RESTfullServiceTest\Http;
+namespace Forum\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -16,9 +16,9 @@ class Kernel extends HttpKernel
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-        \RESTfullServiceTest\Http\Middleware\TrimStrings::class,
+        \Forum\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \RESTfullServiceTest\Http\Middleware\TrustProxies::class,
+        \Forum\Http\Middleware\TrustProxies::class,
     ];
 
     /**
@@ -28,12 +28,12 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \RESTfullServiceTest\Http\Middleware\EncryptCookies::class,
+            \Forum\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \RESTfullServiceTest\Http\Middleware\VerifyCsrfToken::class,
+            \Forum\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -55,7 +55,7 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \RESTfullServiceTest\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \Forum\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

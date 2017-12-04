@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    RESTfullServiceTest\Http\Kernel::class
+    Forum\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    RESTfullServiceTest\Console\Kernel::class
+    Forum\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    RESTfullServiceTest\Exceptions\Handler::class
+    Forum\Exceptions\Handler::class
 );
 
 /*

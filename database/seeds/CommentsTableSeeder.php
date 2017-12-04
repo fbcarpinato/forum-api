@@ -1,7 +1,7 @@
 <?php
 
+use Forum\Models\Comment;
 use Illuminate\Database\Seeder;
-use RESTfullServiceTest\Models\Comment;
 
 class CommentsTableSeeder extends Seeder
 {
